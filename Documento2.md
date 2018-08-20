@@ -54,7 +54,7 @@ __Escenario de Seguridad__
 
 * __Vistas de arquitectura:__
 	* __Vista lógica:__
-	* ![vista](https://imgur.com/phFbeZ1)
+	* ![vista](https://i.imgur.com/phFbeZ1.jpg)
 	* __Vista de desarrollo:__
 	* ![vista](http://img.fenixzone.net/i/gSa3L5I.png)
 	* __Vista física:__
