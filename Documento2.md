@@ -70,10 +70,7 @@ __Herramientas__
 
 #### Disponibilidad
 
-La seguridad de aplicaciones web es una rama de la Seguridad Informática que se encarga específicamente de la seguridad de sitios web, aplicaciones web y servicios web.
 
-A un alto nivel, la seguridad de aplicaciones web se basa en los principios de la seguridad de aplicaciones pero aplicadas específicamente a la World Wide Web.
-*https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
 
 
 __Patrones y mejores prácticas__
@@ -95,7 +92,10 @@ Concepto
 
 #### Seguridad
 
-concepto
+La seguridad de aplicaciones web es una rama de la Seguridad Informática que se encarga específicamente de la seguridad de sitios web, aplicaciones web y servicios web.
+
+A un alto nivel, la seguridad de aplicaciones web se basa en los principios de la seguridad de aplicaciones pero aplicadas específicamente a la World Wide Web.
+*https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
 
 * __Patrones y mejores prácticas__
 
