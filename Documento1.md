@@ -16,7 +16,7 @@ Al analizar los 3 proyectos, encontramos mayor facilidad trabajando con el  de D
 
 __Descripción de la aplicación__
 
-falta
+Aplicacion web de geolocalizacion, permite guardar la ubicacion en tiempo real cada intervalo de tiempo segun la ruta del usuario, ademas permite la visualizacion de ubicaciones a partir de mapas en google.
 
 __Requisitos Funcionales de la aplicación:__
 
@@ -26,6 +26,9 @@ __Requisitos Funcionales de la aplicación:__
 * Visualización de ruta en tiempo real
 
 ### Detalles técnicos del diseño e implementación funcional para el proyecto2.
+
+
+### Definición de Tecnologia v1
 
 
 ### Marco-referencia-v1
