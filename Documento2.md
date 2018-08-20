@@ -6,9 +6,12 @@
 __Miembros del equipo y asignación de QA por miembros__
 
 * Marco antonio Franco Montoya - Disponibilidad
+    @manfranco
 * Juan Camilo Rodriguez Montoya - Rendimiento
+    @jrodri92
 * David Felipe Lemus Giraldo - Seguridad
-
+    @dlemusg
+    
 ### Análisis
 
 ### Diseño
