@@ -1,4 +1,4 @@
-# PROYECTO 2 - Documento 1<h1>
+# PROYECTO 2 - Documento 2<h1>
 # Análisis y diseño para escalabilidad<h2>
 
 
@@ -55,6 +55,7 @@ __Escenario de Seguridad__
 __Vistas de arquitectura__
 
 __Patrones de arquitectura__
+* __Patrón Modelo-Vista-Controlador(MVC):__ 
 
 __Best Practices__
 
