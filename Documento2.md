@@ -62,6 +62,13 @@ __Best Practices__
 * __DRY(Don’t repeat yourself):__ Eliminar la duplicación de logica de negocio a partir de la abstracción, permitir la automatización de procesos y evitar la repetición de código, la duplicación es dificil de mantener y genera proyectos mas complejos y pesados. 
 * __KISS(Keep It Simple Stupid):__ Mantener la simplicidad como objetivo principal en el diseño de la aplicación y asi evitar la complejidad.
 
+* __YAGNI(You ain't gonna need it):__ No implementar nada a partir de supuesto, es decir, estar seguros de implementar para ahorranos tiempo y esfuerzo.
+
+* __Pruebas continuas:__ Evaluar el funcionamiento de la aplicación en ambientes de pruebas antes de lanzar un avanzo a producción.
+
+* __Uso de repositorio
+
+
 __Tacticas__
 
 __Herramientas__
