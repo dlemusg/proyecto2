@@ -59,6 +59,9 @@ __Patrones de arquitectura__
 
 __Best Practices__
 
+* __DRY(Don’t repeat yourself):__ Eliminar la duplicación de logica de negocio a partir de la abstracción, permitir la automatización de procesos y evitar la repetición de código, la duplicación es dificil de mantener y genera proyectos mas complejos y pesados. 
+* __KISS(Keep It Simple Stupid):__ Mantener la simplicidad como objetivo principal en el diseño de la aplicación y asi evitar la complejidad.
+
 __Tacticas__
 
 __Herramientas__
@@ -116,3 +119,6 @@ A un alto nivel, la seguridad de aplicaciones web se basa en los principios de l
 2. Modelo–vista–controlador - *https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador*
 3. Aspectos Básicos de la Seguridad en Aplicaciones Web - *https://www.seguridad.unam.mx/historico/documento/index.html-id=17*
 4. Escenarios de calidad - *https://github.com/Arquisoft/ObservaTerra11/wiki/Escenarios-de-calidad*
+5. Don’t Repeat Yourself - *https://deviq.com/don-t-repeat-yourself/*
+6. Principio KISS: De qué se trata (Parte 1) - *https://mantenlosimple.com/2013/10/12/principio-kiss-p1/*
+
