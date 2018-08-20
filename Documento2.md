@@ -55,7 +55,7 @@ __Escenario de Seguridad__
 __Vistas de arquitectura__
 
 __Patrones de arquitectura__
-* __Patrón Modelo-Vista-Controlador(MVC):__ 
+* __Patrón Modelo-Vista-Controlador(MVC):__ Como su nombre lo indica, este patrón se estructura en 3 capas logicas que interactuan separando la presentacion e iteración con los datos. La capa del *modelo* gestiona los datos, conexiones a BD y los metodos que interactuen sobre ellos, la *vista* es la engarcada de la presentación de la información al usuario, es decir "es la capa con la que el usuario interactua con el sistema" y la capa del *controlador* es la orquestadora de las interacciones del usuario con las funcion del sistema, es el engargado de gestionar el acceso al modelo y la presentación de los datos en la vista. 
 
 __Best Practices__
 
