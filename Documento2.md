@@ -69,5 +69,37 @@ __Herramientas__
 ### Marco-referencia-v2
 
 #### Disponibilidad
+
+Concepto
+
+
+##### Patrones y mejores prácticas
+.
+.
+.
+
+
 #### Rendimiento
+
+Concepto
+
+##### Patrones y mejores prácticas
+.
+.
+.
+
+
+
 #### Seguridad
+
+concepto
+
+##### Patrones y mejores prácticas
+
+* __Balancear riesgo y usabilidad:__ A mayor complejidad de nuestro sitio, aumenta el riesgo de que se sufra un ataque debido a sus características más elaboradas, es por eso que deben considerarse opciones de seguridad necesarias y sencillas pero eficientes, que ayuden a mitigar cualquier característica que la haga vulnerable.
+
+* __Rastrear el paso de los datos:__  En las aplicaciones web, existen maneras de distinguir los orígenes de los datos y poder así reconocer cuando los datos pueden ser dignos de confianza y cuando no.
+
+* __Filtrar entradas:__ El filtrado es una de las piedras angulares de la seguridad en aplicaciones web. Es el proceso por el cual se prueba la validez de los datos. Si nos aseguramos que los datos son filtrados apropiadamente al entrar, podemos eliminar el riesgo de que datos contaminados sean usados para provocar funcionamientos no deseados en la aplicación.
+
+* __Escapado de salidas:__ Codificar o decodificar caracteres especiales de tal forma que su significado original sea preservado. Si llegamos a utilizar una codificación en particular es necesario conocer los caracteres reservados los cuales serán necesarios escapar.
