@@ -73,7 +73,7 @@ __Herramientas__
 Concepto
 
 
-##### Patrones y mejores prácticas
+__Patrones y mejores prácticas__
 .
 .
 .
@@ -83,7 +83,7 @@ Concepto
 
 Concepto
 
-##### Patrones y mejores prácticas
+__Patrones y mejores prácticas__
 .
 .
 .
@@ -94,7 +94,7 @@ Concepto
 
 concepto
 
-##### Patrones y mejores prácticas
+__Patrones y mejores prácticas__
 
 * __Balancear riesgo y usabilidad:__ A mayor complejidad de nuestro sitio, aumenta el riesgo de que se sufra un ataque debido a sus características más elaboradas, es por eso que deben considerarse opciones de seguridad necesarias y sencillas pero eficientes, que ayuden a mitigar cualquier característica que la haga vulnerable.
 
