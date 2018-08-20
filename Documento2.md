@@ -109,3 +109,9 @@ A un alto nivel, la seguridad de aplicaciones web se basa en los principios de l
     * __Filtrar entradas:__ El filtrado es una de las piedras angulares de la seguridad en aplicaciones web. Es el proceso por el cual se prueba la validez de los datos. Si nos aseguramos que los datos son filtrados apropiadamente al entrar, podemos eliminar el riesgo de que datos contaminados sean usados para provocar funcionamientos no deseados en la aplicación.
 
     * __Escapado de salidas:__ Codificar o decodificar caracteres especiales de tal forma que su significado original sea preservado. Si llegamos a utilizar una codificación en particular es necesario conocer los caracteres reservados los cuales serán necesarios escapar.
+    
+### Referencias
+
+1. Seguridad de aplicaciones web - *https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
+2. Modelo–vista–controlador - *https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador*
+3. Aspectos Básicos de la Seguridad en Aplicaciones Web - *https://www.seguridad.unam.mx/historico/documento/index.html-id=17*
