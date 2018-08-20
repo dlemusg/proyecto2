@@ -115,3 +115,4 @@ A un alto nivel, la seguridad de aplicaciones web se basa en los principios de l
 1. Seguridad de aplicaciones web - *https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
 2. Modelo–vista–controlador - *https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador*
 3. Aspectos Básicos de la Seguridad en Aplicaciones Web - *https://www.seguridad.unam.mx/historico/documento/index.html-id=17*
+4. Escenarios de calidad - *https://github.com/Arquisoft/ObservaTerra11/wiki/Escenarios-de-calidad*
