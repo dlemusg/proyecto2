@@ -52,13 +52,13 @@ __Escenario de Seguridad__
 
 ### Diseño
 
-__Vistas de arquitectura__
+* __Vistas de arquitectura:__
 	* __Vista lógica:__
-	* ![vista](https://imgur.com/hF5UUFY)
+	* ![vista](https://imgur.com/phFbeZ1)
 	* __Vista de desarrollo:__
-	* ![vista](https://imgur.com/a3l5fDr)
+	* ![vista](http://img.fenixzone.net/i/gSa3L5I.png)
 	* __Vista física:__
-	* ![vista](https://imgur.com/PzMJRWP)
+	* ![vista](http://img.fenixzone.net/i/rLvaHY8.png)
 
 __Patrones de arquitectura__
 * __Patrón Modelo-Vista-Controlador(MVC):__ Como su nombre lo indica, este patrón se estructura en 3 capas logicas que interactuan separando la presentacion e iteración con los datos. La capa del *modelo* gestiona los datos, conexiones a BD y los metodos que interactuen sobre ellos, la *vista* es la engarcada de la presentación de la información al usuario, es decir "es la capa con la que el usuario interactua con el sistema" y la capa del *controlador* es la orquestadora de las interacciones del usuario con las funcion del sistema, es el engargado de gestionar el acceso al modelo y la presentación de los datos en la vista.
