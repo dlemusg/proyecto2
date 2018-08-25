@@ -211,4 +211,5 @@ A un alto nivel, la seguridad de aplicaciones web se basa en los principios de l
 5. Don’t Repeat Yourself - *https://deviq.com/don-t-repeat-yourself/*
 6. Principio KISS: De qué se trata (Parte 1) - *https://mantenlosimple.com/2013/10/12/principio-kiss-p1/*
 7. *“Architecting High Performing, Scalableand Available Enterprise Web Applications”* de **Shailesh Kumar, 2015** - *http://proquestcombo.safaribooksonline.com.ezproxy.eafit.edu.co/book/software-engineering-and-development/enterprise/9780128022580/firstchapter*
+8. Pruebas de rendimiento - *https://www.fractaliasystems.com/pruebas-de-rendimiento-quality-assurance/*
 
