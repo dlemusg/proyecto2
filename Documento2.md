@@ -160,30 +160,29 @@ A la hora de efectuar pruebas de rendimiento empleando herramientas de software,
 
 * __Patrones y mejores prácticas__
 
-**Pensar en Caché:** Tener almacenamiento en cache, es decir, tener la mayor cantidad
-posible de componentes y paginas importantes bajo una estrategia de almacenamiento en caché.
+    * __Pensar en Caché:__ Tener almacenamiento en cache, es decir, tener la mayor cantidad
+    posible de componentes y paginas importantes bajo una estrategia de almacenamiento en caché.
 
-**Diseño para el fracaso:** Evaluar todas las posibilidades de fracaso y su probabilidad probable.
-Algunos eventos comunes de falla pueden ser fallos de hardware, fallos de seguridad,
-desastres naturales, repunte repentino del tráfico de usuarios, fallos de red, fallos de operaciones, etc.
+    * __Diseño para el fracaso:__ Evaluar todas las posibilidades de fracaso y su probabilidad probable.
+    Algunos eventos comunes de falla pueden ser fallos de hardware, fallos de seguridad,
+    desastres naturales, repunte repentino del tráfico de usuarios, fallos de red, fallos de operaciones, etc.
 
-**Computación distribuida y paralela:** Diseñe software para que su computación pueda
-distribuirse a través de múltiples nodos de computación. Esto ofrece la doble ventaja
-de rendimiento y escalabilidad.
+    * __Computación distribuida y paralela:__ Diseñe software para que su computación pueda
+    distribuirse a través de múltiples nodos de computación. Esto ofrece la doble ventaja de rendimiento y escalabilidad.
 
-**Mantenerse liviano:** los componentes páginas clave deben mantenerse ligeros reduciendo
-su tamaño general y minimizando el número de viajes de ida y vuelta del servidor.
+    * __Mantenerse liviano:__ los componentes páginas clave deben mantenerse ligeros reduciendo
+    su tamaño general y minimizando el número de viajes de ida y vuelta del servidor.
 
-**Cargas no bloqueadas usando la solicitud de datos asincrónicos:** Sean componentes del
-lado del cliente o para comunicarse con el servidor o para la agregación de datos, intente
-aprovechar el enfoque basado en AJAX. Esto mejora drásticamente el tiempo de carga de la
-página percibida y proporciona una carga no bloqueante de la página.
+    * __Cargas no bloqueadas usando la solicitud de datos asincrónicos:__ Sean componentes del
+    lado del cliente o para comunicarse con el servidor o para la agregación de datos, intente
+    aprovechar el enfoque basado en AJAX. Esto mejora drásticamente el tiempo de carga de la
+    página percibida y proporciona una carga no bloqueante de la página.
 
-**Usar la política de carga bajo demanda:** Cargue los datos y el componente sólo cuando sea necesario.
+    * __Usar la política de carga bajo demanda:__* Cargue los datos y el componente sólo cuando sea necesario.
 
-**Batching:** Mientras se recuperan datos de sistemas de interfaz como una base de datos
-o servicios web, se recomienda hacer batch de las solicitudes con el fin de minimizar el
-número de viajes de ida y vuelta del servidor.
+    * __Batching:*__ Mientras se recuperan datos de sistemas de interfaz como una base de datos
+    o servicios web, se recomienda hacer batch de las solicitudes con el fin de minimizar el
+    número de viajes de ida y vuelta del servidor.
 
 #### Seguridad
 
