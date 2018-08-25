@@ -33,12 +33,42 @@ __Escenario de Disponibilidad__
 * __Medida de respuesta:__
 
 __Escenario de Rendimiento__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
+
+| Escenario | 1 |
+| --- | --- |
+| Fuente del estímulo | Aplicación |
+| Estímulo | Sobrecarga de datos |
+| Artefacto | Servidor |
+| Ambiente | Multiples usuarios enviando ubicación a tiempo real |
+| Respuesta | Implementar sistemas de colas para envio y recepción de datos |
+| Medida de Respuesta | Mejora el tiempo de respuesta al momento de que el usuario envía sus posiciones |
+
+| Escenario | 2 |
+| --- | --- |
+| Fuente del estímulo | Google Maps API |
+| Estímulo | Fallo al mostrar el mapa |
+| Artefacto | Aplicación |
+| Ambiente | Tiempo de carga superior a 5 segundos |
+| Respuesta | Cancelar carga y solicitar recarga de pagina al usuario |
+| Medida de Respuesta | Tiempo de respuesta del API de Google Maps |
+
+| Escenario | 3 |
+| --- | --- |
+| Fuente del estímulo | Aplicación |
+| Estímulo | Sobrecarga de tráfico |
+| Artefacto | Servidor |
+| Ambiente | Crecimiento de visitas |
+| Respuesta | Balanceador de carga envia requerimientos a otros servidores |
+| Medida de Respuesta | Aumenta la capacidad de carga |
+
+| Escenario | 4 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Se registra o loguea|
+| Artefacto | Servidor |
+| Ambiente | Operación normal |
+| Respuesta | Se procesa el registro o logueo |
+| Medida de Respuesta | Tiempo de respuesta promedio de 3 segundos |
 
 __Escenario de Seguridad__
 * __Fuente del estímulo:__
@@ -89,26 +119,71 @@ definir tecnologia a utilizar!!!!!!!
 ### Marco-referencia-v2
 
 #### Disponibilidad
+    .
+* __Patrones y mejores prácticas__
+    .
+    .
+    .
 
+#### Rendimiento ¿Qué son las pruebas de rendimiento?
 
+Las pruebas de rendimiento son un conjunto de pruebas no funcionales que se realizan, para determinar la velocidad de ejecución de una tarea concreta en un sistema bajo condiciones particulares de trabajo.
 
+Los objetivos de estas pruebas son:
 
-__Patrones y mejores prácticas__
-.
-.
-.
+    Validar y verificar atributos de la calidad del sistema: uso de los recursos, escalabilidad y fiabilidad.
+    Comparación de sistemas para encontrar cuál de ellos funciona mejor.
+    Determinar qué componentes del sistema provocan que el conjunto .presente rendimientos bajos.
 
+Tipos de Pruebas de Rendimiento
 
-#### Rendimiento
+1. Prueba de Carga => Load Test
 
-Concepto
+Prueba de rendimiento que se realiza para observar el comportamiento de una aplicación bajo una cantidad de peticiones esperada.
+
+Objetivos:
+    Mostrar los tiempos de respuesta de todas las transacciones importantes.
+    Localizar los ‘cuellos de botella’ de una aplicación.
+
+2. Pruebas de Estrés => Stress Test
+
+Prueba de rendimiento que se realiza para observar el comportamiento de una aplicación bajo una cantidad de peticiones extrema.
+
+Objetivos:
+
+    ‘Romper’ la aplicación.
+    Determinar cómo rendirá la aplicación si la carga real supera a la carga esperada
+
+3.  Otras Pruebas: de picos, de estabilidad, …
+
+A la hora de efectuar pruebas de rendimiento empleando herramientas de software, es necesario que el departamento de QA, defina un escenario lo más real posible, es decir, lo más semejante a las situaciones de funcionamiento en el entorno.
 
 * __Patrones y mejores prácticas__
 
-.
-.
+**Pensar en Caché:** Tener almacenamiento en cache, es decir, tener la mayor cantidad
+posible de componentes y paginas importantes bajo una estrategia de almacenamiento en caché.
 
+**Diseño para el fracaso:** Evaluar todas las posibilidades de fracaso y su probabilidad probable.
+Algunos eventos comunes de falla pueden ser fallos de hardware, fallos de seguridad,
+desastres naturales, repunte repentino del tráfico de usuarios, fallos de red, fallos de operaciones, etc.
 
+**Computación distribuida y paralela:** Diseñe software para que su computación pueda
+distribuirse a través de múltiples nodos de computación. Esto ofrece la doble ventaja
+de rendimiento y escalabilidad.
+
+**Mantenerse liviano:** los componentes páginas clave deben mantenerse ligeros reduciendo
+su tamaño general y minimizando el número de viajes de ida y vuelta del servidor.
+
+**Cargas no bloqueadas usando la solicitud de datos asincrónicos:** Sean componentes del
+lado del cliente o para comunicarse con el servidor o para la agregación de datos, intente
+aprovechar el enfoque basado en AJAX. Esto mejora drásticamente el tiempo de carga de la
+página percibida y proporciona una carga no bloqueante de la página.
+
+**Usar la política de carga bajo demanda:** Cargue los datos y el componente sólo cuando sea necesario.
+
+**Batching:** Mientras se recuperan datos de sistemas de interfaz como una base de datos
+o servicios web, se recomienda hacer batch de las solicitudes con el fin de minimizar el
+número de viajes de ida y vuelta del servidor.
 
 #### Seguridad
 
@@ -135,4 +210,5 @@ A un alto nivel, la seguridad de aplicaciones web se basa en los principios de l
 4. Escenarios de calidad - *https://github.com/Arquisoft/ObservaTerra11/wiki/Escenarios-de-calidad*
 5. Don’t Repeat Yourself - *https://deviq.com/don-t-repeat-yourself/*
 6. Principio KISS: De qué se trata (Parte 1) - *https://mantenlosimple.com/2013/10/12/principio-kiss-p1/*
+7. *“Architecting High Performing, Scalableand Available Enterprise Web Applications”* de **Shailesh Kumar, 2015** - *http://proquestcombo.safaribooksonline.com.ezproxy.eafit.edu.co/book/software-engineering-and-development/enterprise/9780128022580/firstchapter*
 
