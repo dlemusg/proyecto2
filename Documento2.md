@@ -79,6 +79,9 @@ __Best Practices__
 __Tacticas__
 
 __Herramientas__
+* __NGINX:__
+* __ZEVENET:__
+* __Node.js:__
 
 ### Definición de Tecnología v2
 
