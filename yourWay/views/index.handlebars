@@ -1,6 +1,4 @@
 <body>
-
-
     <main role="main" class="container"></main>
 
     <div class="starter-template">
@@ -13,19 +11,16 @@
             <p style="visibility: hidden" id="demo"></p>
             <form name="myform" action="/index" method="GET">
                 <input type="submit" class="btn btn-default" value="Mostrar posiciones">
-
             </form>
         </center>
     </div>
-    </main>
 
-    <script src='/public/js/location.js'></script>
+    <script src='/js/location.js'></script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg&callback=initMap"></script>
 
     <!--<a href="/index">LOAD DATA</a>-->
     <div class="container-fluid">
-
 
         <!--<a href="javascript:getmap()" > Mapa </a>-->
         {{# each items }}
@@ -36,7 +31,6 @@
         <!--addMarker({{ this.latitude }}, {{ this.longitude }});-->
         {{/each}}
 
-
     </div>
     <!--
     <div id="map"></div>
@@ -46,9 +40,8 @@
         }
     </style>
     -->
+<!--
 </body>
-
-
 <script>
     //  var location = items.;
 
@@ -69,4 +62,4 @@
         }
         var map = new google.maps.Map(document.getElementById('map'), options);
     }
-</script>
+</script>-->

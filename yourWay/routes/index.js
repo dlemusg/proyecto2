@@ -1,11 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/**
-var User = require('../models/user');
-var Location = require('../models/location');
- */
-
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
 	res.render('index');
@@ -19,7 +14,6 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('/users/login');
 	}
 }
-
 
 var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
@@ -46,6 +40,4 @@ router.get('/index', function(req, res, next) {
 		res.render('index', {items: resultArray});
 	  });
 	});
-  });
-   
-
+});

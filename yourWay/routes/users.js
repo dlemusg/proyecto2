@@ -3,13 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-//var scripts = [{ script: '/public/js/location.js' }];
-
 var User = require('../models/user');
 
 var Location = require('../models/location');
-
-
 
 // Register
 router.get('/register', function (req, res) {
@@ -21,7 +17,6 @@ router.get('/login', function (req, res) {
 	res.render('login');
 });
 
-
 // Register User
 router.post('/register', function (req, res) {
 	var name = req.body.name;
@@ -29,8 +24,6 @@ router.post('/register', function (req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
-
-	//console.log(name);
 
 	// Validation
 	req.checkBody('name', 'Name is required').notEmpty();
@@ -48,7 +41,6 @@ router.post('/register', function (req, res) {
 		});
 
 	} else {
-		//console.log('PASSED')
 		var newUser = new User({
 			name: name,
 			email: email,
@@ -108,8 +100,6 @@ router.get('/logout', function (req, res) {
 	res.redirect('/users/login');
 });
 
-
-// login
 router.get('/location', function (req, res) {
 	res.render('location');
 });
@@ -120,11 +110,7 @@ router.get('/location', function (req, res) {
 	res.redirect('/users/location');
 });
 
-
-
-
 var UserLocation = require('../models/location');
-
 
 router.post('/location', function (req, res) {
 	var username = req.user.username;
@@ -144,7 +130,5 @@ router.post('/location', function (req, res) {
 		console.log(location);
 	});
 });
-
-
 
 module.exports = router;
