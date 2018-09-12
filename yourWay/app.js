@@ -10,10 +10,22 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+
+const keys = require('./config/keys');
+
+
+const authRoutes = require('./routes/auth-routes');
+const passportSetup = require('./config/passport-setup');
 
 //mongoose.connect('mongodb://mongo-server/yourWay'); // servidor en produccion
 mongoose.connect('mongodb://localhost/yourWay'); //local
 var db = mongoose.connection;
+
+// connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () => {
+  console.log('connected to mongodb');
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +38,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({defaultLayout:'layout'}));
 app.set('view engine', 'handlebars');
+
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [keys.session.cookieKey]
+
+}));
+
+
+
 // BodyParser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,16 +55,28 @@ app.use(cookieParser());
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Express Session
-app.use(session({
-    secret: 'secret',
-    saveUninitialized: true,
-    resave: true
-}));
+var sess = {
+  secret: 'CHANGE THIS SECRET',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true
+};
+app.use(session(sess));
+if (app.get('env') === 'production') {
+  sess.cookie.secure = true; // serve secure cookies, requires https
+}
+
+
+
 
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+app.use('/auth', authRoutes);
+// Express Session
+
 
 // Express Validator
 app.use(expressValidator({
@@ -75,12 +108,18 @@ app.use(function (req, res, next) {
     next();
   });
   
-app.use('/', routes);
+
 app.use('/users', users);
+app.use('/', routes);
+
+//create home route
+app.get('/', (req, res) => {
+  //res.render('home', { user: req.user });
+  res.render('index', {user: req.user});
+});
+
 
 // Set Port
-app.set('port', (process.env.PORT || 3000));
-
-app.listen(app.get('port'), function(){
-	console.log('Server started on port '+app.get('port'));
-}); 
+app.listen(3000, () => {
+  console.log('app now listening for requests on port 3000');
+});

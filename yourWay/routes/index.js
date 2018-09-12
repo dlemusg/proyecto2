@@ -16,7 +16,7 @@ function ensureAuthenticated(req, res, next){
 		return next();
 	} else {
 		req.flash('error_msg','You are not logged in');
-		res.redirect('/users/login');
+		res.redirect('/auth/login');
 	}
 }
 
@@ -28,7 +28,21 @@ var url = 'mongodb://localhost:27017/';
 //var url = 'mongodb://mongo-server/';   
 module.exports = router;
 var resultArray = [];
-router.get('/index', function(req, res, next) {
+
+
+const authCheck = (req, res, next) => {
+    if(!req.user){
+        // if user is no logged in
+        res.redirect('/auth/login');
+    } else {
+        // if logged in
+        next();
+    }
+};
+
+router.get('/index', authCheck, function(req, res, next) {
+
+
 
 	mongo.connect(url, function(err, db) {
 		assert.equal(null, err);
