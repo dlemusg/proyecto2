@@ -19,7 +19,7 @@ const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
 
 //mongoose.connect('mongodb://mongo-server/yourWay'); // servidor en produccion
-mongoose.connect('mongodb://localhost/yourWay'); //local
+mongoose.connect('mongodb://localhost/yourWay3'); //local
 var db = mongoose.connection;
 
 // connect to mongodb

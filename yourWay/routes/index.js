@@ -40,7 +40,7 @@ router.get('/index', authCheck, function(req, res, next) {
 
 	mongo.connect(url, function(err, db) {
 		assert.equal(null, err);
-		var dbo = db.db('yourWay')
+		var dbo = db.db('yourWay3')
 	  var cursor = dbo.collection('location').find({"username": req.user.username});
 		
 		cursor.forEach(function(doc, err) {
