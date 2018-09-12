@@ -112,12 +112,16 @@ router.get('/location', function (req, res) {
 
 var UserLocation = require('../models/location');
 
-router.post('/location', function (req, res) {
+router.post('/location', (req, res) => {
+	console.log("ya entré");
+	console.log(req.body);
+	
+	//console.log(username)
 	var username = req.user.username;
 	var latitude = req.body.latitude;
 	var longitude = req.body.longitude;
 
-	//	console.log(req.user.username);
+	//console.log({username});
 
 	var newUserLocation = new UserLocation({
 		username: username,
@@ -126,9 +130,11 @@ router.post('/location', function (req, res) {
 	});
 
 	UserLocation.addLocation(newUserLocation, function (err, location) {
+		console.log("entré en adicionar")
 		if (err) throw err;
 		console.log(location);
 	});
+	res.json('Successfully created');
 });
 
 module.exports = router;
