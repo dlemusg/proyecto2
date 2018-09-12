@@ -1,5 +1,9 @@
 $(function () {
+  //variables
   const URI = '/users/location';
+  var init = false;
+  var ciclo;
+
   function initMap() {
     var options = {
         zoom: 8,
@@ -24,12 +28,11 @@ $(function () {
     parar();
   });
 
-  $('#form').on('submit', (e , req, res) => {
+  $('#form').on('submit', (e) => {
     e.preventDefault();
     getLocation();
     let latitud = document.form.latitude.value; 
     let longitud = document.form.longitude.value;
-    let user = $('#user');
 
     if(latitud != ""){
       $.ajax({
@@ -39,33 +42,31 @@ $(function () {
           latitude: latitud,
           longitude: longitud
         },
-        success: function(response) {
-          console.log("se logró")
-          $('#prueba').click()
-          //$('#getProducts').click();
-        },
         error: function (err) {
-          console.log("error :C")
           console.log(err);
         }
       });
     }
-    else{
-      $('#prueba').click()
-      console.log("no se puede vuelvelo a intentar")
-    }
   });
-
+  function intervalo(){
+    if(init == true){
+      $('#prueba').click();
+    }
+    else{
+      clearInterval(ciclo);
+    }
+  }
   function iniciar() {
-    //ciclo = setInterval(getLocation, 1000);
+    init = true;
+    ciclo = setInterval(intervalo, 1000);
     document.getElementById("iniciar").disabled = true;
     document.getElementById("parar").disabled = false;
     getLocation();
   }
   function parar() {
+    init = false;
     document.getElementById("iniciar").disabled = false;
     document.getElementById("parar").disabled = true;
-    window.stop()
   }
   function getLocation() {
     if (navigator.geolocation) {
@@ -80,12 +81,5 @@ $(function () {
       document.getElementById("latitude").value = position.coords.latitude;
       document.getElementById("longitude").value = position.coords.longitude;
       addMacker(parseFloat(position.coords.latitude), position.coords.longitude);
-      $('#prueba').click()
-      //guardar();
-  }
-  function guardar() {
-      document.form.latitude.value ;
-      document.form.longitude.value; 
-      document.form.submit();
   }
 });
