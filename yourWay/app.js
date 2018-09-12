@@ -18,8 +18,8 @@ const keys = require('./config/keys');
 const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
 
-//mongoose.connect('mongodb://mongo-server/yourWay'); // servidor en produccion
-mongoose.connect('mongodb://localhost/yourWay3'); //local
+mongoose.connect('mongodb://mongo-server/yourWay3'); // servidor en produccion
+//mongoose.connect('mongodb://localhost/yourWay3'); //local
 var db = mongoose.connection;
 
 // connect to mongodb
