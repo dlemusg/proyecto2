@@ -30,14 +30,11 @@ router.get('/index', function(req, res, next) {
 	  var cursor = dbo.collection('location').find({"username": req.user.username});
 		
 		cursor.forEach(function(doc, err) {
-		assert.equal(null, err);
-		
-		resultArray.push(doc);
-		
-		//console.log(resultArray);
+			assert.equal(null, err);
+			resultArray.push(doc);
 	  }, function() {
 		db.close();
-		res.render('index', {items: resultArray});
+		res.json(resultArray);
 	  });
 	});
 });

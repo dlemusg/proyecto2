@@ -1,6 +1,15 @@
-$(function () {
+$(function (req) {
+  URI = '/index'
   $('#recorrido').on('click', () => {
     initMap();
+    $.ajax({
+      url: URI,
+      success: function (locations) {
+        locations.forEach(location =>{
+          addMacker(location.latitude, location.longitude)
+        });
+      }
+    });
   });
 
   function initMap() {
