@@ -7,7 +7,8 @@ module.exports = {
         clientSecret: 'uBUI5v45M4w1WFQRQmWwfGnLPyIJihpKIe1oVNiUuqUvqAMjBUQtpLFvVKJwRObp'
     },
     mongodb: {
-        dbURI:'mongodb://localhost:27017/yourWay3'
+        //dbURI:'mongodb://localhost:27017/yourWay3'
+        dbURI: 'mongodb://mongo-server/yourWay3'
     },
     session: {
         cookieKey: 'thenetninjaisaweomeiguess'
