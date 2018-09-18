@@ -1,18 +1,16 @@
-# PROYECTO 2 - Documento 1<h1>
+# PROYECTO 2 - Rendimiento - Documento 1<h1>
 
 
 ### Definición del equipo, proyecto y aplicación:
-__Miembros del equipo y asignación de QA por miembros__
+__Responsable__
 
-* Marco antonio Franco Montoya - Disponibilidad
-* Juan Camilo Rodriguez Montoya - Rendimiento
-* David Felipe Lemus Giraldo - Seguridad
+* Juan Camilo Rodriguez Montoya
 
 __Selección de la aplicación basada en Proyecto1__
 
 Al analizar los 3 proyectos, encontramos mayor facilidad trabajando con el  de David Lemus, considerando la facilidad de entender el proyecto y mayor cantidad de avances comparado con los otros. Las plataformas utilizadas no fueron preocupación, puesto que todos trabajamos usando node.js, docker, mongodb.
 
-*El repositorio seleccionado fue:* https://github.com/dlemusg/proyecto1
+*El repositorio seleccionado fue:* https://github.com/dlemusg/proyecto2
 
 __Descripción de la aplicación__
 
@@ -41,8 +39,6 @@ __Requisitos Funcionales de la aplicación:__
 | PRUEBAS | Jmeter |
 
 ### Marco-referencia-v1
-
-#### Disponibilidad
 
 #### Rendimiento
 Las pruebas de rendimiento son un conjunto de pruebas no funcionales que se realizan, para determinar la velocidad de ejecución de una tarea concreta en un sistema bajo condiciones particulares de trabajo.
@@ -75,5 +71,3 @@ Objetivos:
 3.  Otras Pruebas: de picos, de estabilidad, …
 
 A la hora de efectuar pruebas de rendimiento empleando herramientas de software, es necesario que el departamento de QA, defina un escenario lo más real posible, es decir, lo más semejante a las situaciones de funcionamiento en el entorno.
-
-#### Seguridad
