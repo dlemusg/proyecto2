@@ -1,36 +1,13 @@
-# PROYECTO 2 - Documento 2<h1>
+# PROYECTO 2 - Rendimiento - Documento 2<h1>
 # Análisis y diseño para escalabilidad<h2>
 
 
-### Definición del equipo, proyecto y aplicación:
-__Miembros del equipo y asignación de QA por miembros__
-
-* Marco antonio Franco Montoya - Disponibilidad
-    @manfranco
+### Responsable, proyecto y aplicación:
+__Responsable__
 * Juan Camilo Rodriguez Montoya - Rendimiento
     @jrodri92
-* David Felipe Lemus Giraldo - Seguridad
-    @dlemusg
 
 ### Análisis
-
-Para identificar los escenarios de calidad se seguirá la siguiente estructura:
-
- 1. Fuente del estímulo: quien o que genera el estímulo. 
- 2. Estímulo: lo que se quiere llevar a cabo.
- 3. Entorno: condiciones dentro de las cuales se presenta el estímulo.
- 4. Artefacto: parte del sistema que recibe el estímulo.
- 5. Respuesta: actividad que ocurre luego de la llegada del estímulo.
- 6. Medida de la Respuesta: criterio para testear el requerimiento.
- 7. Atributo de calidad afectado: Atributo de calidad relacionado con el escenario
-
-__Escenario de Disponibilidad__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
 
 __Escenario de Rendimiento__
 
@@ -70,23 +47,9 @@ __Escenario de Rendimiento__
 | Respuesta | Se procesa el registro o logueo |
 | Medida de Respuesta | Tiempo de respuesta promedio de 3 segundos |
 
-__Escenario de Seguridad__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
-
-
-
 ### Diseño
 
 * __Vistas de arquitectura:__
-	* __Vista lógica:__
-	* ![vista](https://i.imgur.com/phFbeZ1.jpg)
-	* __Vista de desarrollo:__
-	* ![vista](https://i.imgur.com/G7bRgme.jpg)
 	* __Vista física:__
 	* ![vista](https://i.imgur.com/776Nvka.jpg)
 
@@ -103,27 +66,44 @@ __Best Practices__
 
 * __Pruebas continuas:__ Evaluar el funcionamiento de la aplicación en ambientes de pruebas antes de lanzar un avanzo a producción.
 
-* __Uso de repositorio
-
-
 __Tacticas__
+
+#### Controlar la demanda de recursos
+Esto se puede hacer reduciendo la cantidad de eventos procesados aplicando una tasa de muestreo, o limitando la velocidad a la que el sistema responde a eventos, para esto se pueden seguir ciertos criterios:
+* Administrar la frecuencia de muestreo.
+* Limitar eventos de respuesta.
+* Priorizar los eventos.
+* Limitar tiempos de ejecución
+* Aumentar la eficiencia de los recursos
+
+### Administrar los recursos.
+De no ser posible controlar la demanda de recursos, aún se puede administrar los recursos tales como la memoria, los procesadores, entre otros. Para ello se pueden usar las siguientes tácticas: 
+* **Incrementar los recursos:** Agregar procesadores más rapidos, más memoria y almacenamiento.
+* Tener multiples servidores y un balanceador de carga.
+
+### Otras tácticas que se usarán
+* **First-in, First-out (FIFO):** Estructuras de colas que priorizan los primeros datos que entrán, serán los primeros en ser procesados por el servidor, dejando los demás en espera, pero sin afectar al cliente y su interactividad con la aplicación.
+* **Data-push y no Data-pull (carga bajo demanda):** Hacer envio de los datos a medida de que el usuario los vaya solicitando.
+* **Pensar en Caché:** Tener almacenamiento en cache, es decir, tener la mayor cantidad posible de componentes y paginas importantes bajo una estrategia de almacenamiento en caché.
+* **Diseño para el fracaso:** Evaluar todas las posibilidades de fracaso y su probabilidad probable. Algunos eventos comunes de falla pueden ser fallos de hardware, fallos de seguridad, desastres naturales, repunte repentino del tráfico de usuarios, fallos de red, fallos de operaciones, etc. Está muy lidago al control de demanda de recursos.
+* **Computación distribuida y paralela:** Diseñe software para que su computación pueda distribuirse a través de múltiples nodos de computación. Esto ofrece la doble ventaja de rendimiento y escalabilidad.
+* **Mantenerse liviano:** los componentes páginas clave deben mantenerse ligeros reduciendo su tamaño general y minimizando el número de viajes de ida y vuelta del servidor.
 
 __Herramientas__
 
 ### Definición de Tecnología v2
-
-
-definir tecnologia a utilizar!!!!!!!
-
+| SISTEMA OPERATIVO | LINUX CENTOS 7.1 |
+| --- | --- |
+| LENGUAJE DE PROGRAMACIÓN | JavaScript / NodeJS |
+| FRAMEWORK WEB - BACKEND | Express |
+| FRAMEWORK WEB - FRONTEND (si aplica) | Bootstrap |
+| WEB APP SERVER | Embebido (Node) |
+| WEB SERVER  | NGINX |
+| BASE DE DATOS | MongoDB |
+| GIT (CLI Y GUI) | GitHub | 
+| PRUEBAS | Jmeter |
 
 ### Marco-referencia-v2
-
-#### Disponibilidad
-    .
-* __Patrones y mejores prácticas__
-    .
-    .
-    .
 
 #### Rendimiento ¿Qué son las pruebas de rendimiento?
 
@@ -184,31 +164,12 @@ A la hora de efectuar pruebas de rendimiento empleando herramientas de software,
     o servicios web, se recomienda hacer batch de las solicitudes con el fin de minimizar el
     número de viajes de ida y vuelta del servidor.
 
-#### Seguridad
-
-La seguridad de aplicaciones web es una rama de la Seguridad Informática que se encarga específicamente de la seguridad de sitios web, aplicaciones web y servicios web.
-
-A un alto nivel, la seguridad de aplicaciones web se basa en los principios de la seguridad de aplicaciones pero aplicadas específicamente a la World Wide Web.
-*https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
-
-* __Patrones y mejores prácticas__
-
-    * __Balancear riesgo y usabilidad:__ A mayor complejidad de nuestro sitio, aumenta el riesgo de que se sufra un ataque debido a sus características más elaboradas, es por eso que deben considerarse opciones de seguridad necesarias y sencillas pero eficientes, que ayuden a mitigar cualquier característica que la haga vulnerable.
-
-    * __Rastrear el paso de los datos:__  En las aplicaciones web, existen maneras de distinguir los orígenes de los datos y poder así reconocer cuando los datos pueden ser dignos de confianza y cuando no.
-
-    * __Filtrar entradas:__ El filtrado es una de las piedras angulares de la seguridad en aplicaciones web. Es el proceso por el cual se prueba la validez de los datos. Si nos aseguramos que los datos son filtrados apropiadamente al entrar, podemos eliminar el riesgo de que datos contaminados sean usados para provocar funcionamientos no deseados en la aplicación.
-
-    * __Escapado de salidas:__ Codificar o decodificar caracteres especiales de tal forma que su significado original sea preservado. Si llegamos a utilizar una codificación en particular es necesario conocer los caracteres reservados los cuales serán necesarios escapar.
-    
 ### Referencias
 
-1. Seguridad de aplicaciones web - *https://es.wikipedia.org/wiki/Seguridad_de_aplicaciones_web*
-2. Modelo–vista–controlador - *https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador*
-3. Aspectos Básicos de la Seguridad en Aplicaciones Web - *https://www.seguridad.unam.mx/historico/documento/index.html-id=17*
-4. Escenarios de calidad - *https://github.com/Arquisoft/ObservaTerra11/wiki/Escenarios-de-calidad*
-5. Don’t Repeat Yourself - *https://deviq.com/don-t-repeat-yourself/*
-6. Principio KISS: De qué se trata (Parte 1) - *https://mantenlosimple.com/2013/10/12/principio-kiss-p1/*
-7. *“Architecting High Performing, Scalableand Available Enterprise Web Applications”* de **Shailesh Kumar, 2015** - *http://proquestcombo.safaribooksonline.com.ezproxy.eafit.edu.co/book/software-engineering-and-development/enterprise/9780128022580/firstchapter*
-8. Pruebas de rendimiento - *https://www.fractaliasystems.com/pruebas-de-rendimiento-quality-assurance/*
+1. Modelo–vista–controlador - *https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador*
+2. Escenarios de calidad - *https://github.com/Arquisoft/ObservaTerra11/wiki/Escenarios-de-calidad*
+3. Don’t Repeat Yourself - *https://deviq.com/don-t-repeat-yourself/*
+4. Principio KISS: De qué se trata (Parte 1) - *https://mantenlosimple.com/2013/10/12/principio-kiss-p1/*
+5. *“Architecting High Performing, Scalableand Available Enterprise Web Applications”* de **Shailesh Kumar, 2015** - *http://proquestcombo.safaribooksonline.com.ezproxy.eafit.edu.co/book/software-engineering-and-development/enterprise/9780128022580/firstchapter*
+6. Pruebas de rendimiento - *https://www.fractaliasystems.com/pruebas-de-rendimiento-quality-assurance/*
 
