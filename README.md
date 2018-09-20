@@ -2,6 +2,12 @@
 @author: David Lemus
 @email: dlemusg@eafit.edu.co
 
+@author: Camilo Rodriguez
+@email: jrodri92@eafit.edu.co
+
+@author: Marco Franco
+@email: mfranc18@eafit.edu.co
+
 # Descripción de aplicación
 
 Aplicacion en node js de geolocalizacion, la cual permite guardar la ubicacion constante de algunos puntos de mim rota desde el dispositivo movil que permita compartir la ubicación.

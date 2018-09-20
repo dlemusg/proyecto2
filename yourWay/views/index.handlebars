@@ -1,69 +1,35 @@
 <body>
-
     <main role="main" class="container"></main>
 
     <div class="starter-template">
+        <center>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg"></script>
+            <!--jQuery-->
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+            </script>
+            <!--App -->
+            <script src="/js/route.js"></script>
+
             <h1 class="page-header">INICIO</h1>
             <p class="lead">Bienvenido!, {{user.username}}!</p>
             <p class="lead">Selecciona lo que quieres hacer!</p>
 
             <button type="submit" class="btn btn-default" onclick="location='/users/location'" />Iniciar Recorrido</button>
             <p style="visibility: hidden" id="demo"></p>
-            <form name="myform" action="/index" method="GET">
-                <input type="submit" class="btn btn-default" value="Mostrar posiciones">
+            <button id="recorrido" class="btn btn-default"/>Mostrar posiciones</button>
 
-            </form>
+            <div id="map"></div>
+            <style type="text/css">
+                #map {
+                    height: 500px;
+                }
+            </style>
+            <div>
+                <p  style="visibility: hidden" id="demo">Ubicación</p>
+            </div>
+        </center>
     </div>
-    </main>
-
-    <script src='/public/js/location.js'></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg&callback=initMap"></script>
-
-    <!--<a href="/index">LOAD DATA</a>-->
-    <div class="container-fluid">
-
-
-        <!--<a href="javascript:getmap()" > Mapa </a>-->
-        {{# each items }}
-        <article class="item">
-            <div>Username: {{ this.username }}, Latitude: {{ this.latitude }}, Logitude: {{ this.longitude }}</div>
-
-        </article>
-        <!--addMarker({{ this.latitude }}, {{ this.longitude }});-->
-        {{/each}}
-
-
-    </div>
-    <!--
-    <div id="map"></div>
-    <style type="text/css">
-        #map {
-            height: 500px;
-        }
-    </style>
-    -->
 </body>
-
-
-<script>
-    //  var location = items.;
-
-    function addMarker(a, b) {
-        var coor = new google.maps.latLng(a, b)
-        var marker = new google.maps.Marker({
-            position: coor,
-            map: map
-            //icon:props.iconImage
-        })
-        marker.setMap(map)
-    }
-
-    function initMap() {
-        var options = {
-            zoom: 8,
-            center: new google.maps.LatLng(6.27053, -75.57211999999998)
-        }
-        var map = new google.maps.Map(document.getElementById('map'), options);
-    }
-</script>
