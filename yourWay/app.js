@@ -19,7 +19,7 @@ const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
 
 //mongoose.connect('mongodb://mongo-server/yourWay'); // servidor en produccion
-mongoose.connect('mongodb://localhost/yourWay'); //local
+mongoose.connect('mongodb://localhost/yourWay3'); //local
 var db = mongoose.connection;
 
 // connect to mongodb
@@ -56,10 +56,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var sess = {
+   cookie: {
+    secure: true,
+    maxAge: 10000
+  },
   secret: 'CHANGE THIS SECRET',
-  cookie: {},
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false,
+  name: 'SID',
+  unset: 'destroy'
+
 };
 app.use(session(sess));
 if (app.get('env') === 'production') {
@@ -115,7 +121,8 @@ app.use('/', routes);
 //create home route
 app.get('/', (req, res) => {
   //res.render('home', { user: req.user });
-  res.render('index', {user: req.user});
+  //res.render('welcome', {user: req.user});
+  res.render('welcome');
 });
 
 

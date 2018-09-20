@@ -5,7 +5,6 @@ var LocalStrategy = require('passport-local').Strategy;
 //var scripts = [{ script: '/public/js/location.js' }];
 var User = require('../models/user');
 
-
 // login
 router.get('/location', function (req, res) {
 	res.render('location');
@@ -17,11 +16,7 @@ router.get('/location', function (req, res) {
 	res.redirect('/users/location');
 });
 
-
-
-
 var UserLocation = require('../models/location');
-
 
 router.post('/location', function (req, res) {
 	var username = req.user.username;
@@ -41,7 +36,5 @@ router.post('/location', function (req, res) {
 		console.log(location);
 	});
 });
-
-
 
 module.exports = router;

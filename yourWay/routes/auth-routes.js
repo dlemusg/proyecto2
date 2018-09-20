@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
+const cookieSession = require('cookie-session');
 //var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 
 /*
@@ -14,14 +15,10 @@ router.get('/login',
     });
 
 // auth logout
-router.get('/logout', (req, res) => {
-    //hadle with passport
-    //res.send('logging out');
-    //localStorage.removeItem('expires_at');
+router.get('/logout', function(req, res){
     req.logout();
     res.redirect('/');
-    
-});
+  });
 
 // CAMBIAR!!!
 // auth with google
@@ -40,7 +37,7 @@ router.get('/auth0', (req, res) => {
 // callback route for google to redirect to
 router.get('/auth0/redirect', passport.authenticate('auth0'), (req, res) => {
     //res.send(req.user);
-    res.redirect('/index/');
+    res.redirect('/');
 
     //res.send('you reached the callback URI');
 })

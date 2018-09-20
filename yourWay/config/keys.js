@@ -8,6 +8,7 @@ module.exports = {
     },
     mongodb: {
         dbURI:'mongodb://localhost:27017/yourWay3'
+        //dbURI:'mongodb://mongo-server/yourWay'
     },
     session: {
         cookieKey: 'thenetninjaisaweomeiguess'
