@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+
 router.get('/location', function (req, res) {
 	res.render('location');
 });
@@ -14,7 +15,9 @@ router.get('/location', function (req, res) {
 
 var UserLocation = require('../models/location');
 
+
 router.post('/location', (req, res) => {
+
 	var username = req.user.username;
 	var latitude = req.body.latitude;
 	var longitude = req.body.longitude;

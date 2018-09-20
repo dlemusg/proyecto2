@@ -25,12 +25,45 @@ Para identificar los escenarios de calidad se seguirá la siguiente estructura:
  7. Atributo de calidad afectado: Atributo de calidad relacionado con el escenario
 
 __Escenario de Disponibilidad__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
+
+__Escenario de Rendimiento__
+
+| Escenario | 1 |
+| --- | --- |
+| Fuente del estímulo | Aplicación |
+| Estímulo | Sobrecarga de datos |
+| Artefacto | Servidor |
+| Ambiente | Multiples usuarios enviando ubicación a tiempo real |
+| Respuesta | Implementar sistemas de colas para envio y recepción de datos |
+| Medida de Respuesta | Mejora el tiempo de respuesta al momento de que el usuario envía sus posiciones |
+
+| Escenario | 2 |
+| --- | --- |
+| Fuente del estímulo | Google Maps API |
+| Estímulo | Fallo al mostrar el mapa |
+| Artefacto | Aplicación |
+| Ambiente | Tiempo de carga superior a 5 segundos |
+| Respuesta | Cancelar carga y solicitar recarga de pagina al usuario |
+| Medida de Respuesta | Tiempo de respuesta del API de Google Maps |
+
+| Escenario | 3 |
+| --- | --- |
+| Fuente del estímulo | Aplicación |
+| Estímulo | Sobrecarga de tráfico |
+| Artefacto | Servidor |
+| Ambiente | Crecimiento de visitas |
+| Respuesta | Balanceador de carga envia requerimientos a otros servidores |
+| Medida de Respuesta | Aumenta la capacidad de carga |
+
+| Escenario | 4 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Se registra o loguea|
+| Artefacto | Servidor |
+| Ambiente | Operación normal |
+| Respuesta | Se procesa el registro o logueo |
+| Medida de Respuesta | Tiempo de respuesta promedio de 3 segundos |
+
 
 __Escenario de Rendimiento__
 
@@ -71,14 +104,41 @@ __Escenario de Rendimiento__
 | Medida de Respuesta | Tiempo de respuesta promedio de 3 segundos |
 
 __Escenario de Seguridad__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
+| Escenario | 1 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Registro |
+| Artefacto | Auth0 |
+| Ambiente |  Operacion Normal |
+| Respuesta | El usuario queda registron ante auth0 |
+| Medida de Respuesta | Mejora el tiempo de respuesta al momento de registrarse y se aumenta la seguridad |
 
+| Escenario | 2 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Login |
+| Artefacto | Auth0 |
+| Ambiente |  Operacion Normal |
+| Respuesta | Se devuelve un token que autoriza el longin |
+| Medida de Respuesta | Auth0 se encarga del login para mayor seguridad, se garantiza un login siempre disponible |
 
+| Escenario | 3 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Cargar rutas |
+| Artefacto | Aplicacion |
+| Ambiente |  Operacion Normal |
+| Respuesta | Si el usuario no esta loggeado en la app las rutas no son disponibles |
+| Medida de Respuesta | Se muestra mensaje de no disponibilidad |
+
+| Escenario | 4 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Enviar datos y recibir datos |
+| Artefacto | Aplicacion |
+| Ambiente |  Operacion Normal |
+| Respuesta | La aplicacion utiliza conexion https |
+| Medida de Respuesta | Los datos son trasmitidos metdiante protocolos https |
 
 ### Diseño
 
@@ -89,6 +149,7 @@ __Escenario de Seguridad__
 	* ![vista](https://i.imgur.com/G7bRgme.jpg)
 	* __Vista física:__
 	* ![vista](https://i.imgur.com/776Nvka.jpg)
+
 
 __Patrones de arquitectura__
 * __Patrón Modelo-Vista-Controlador(MVC):__ Como su nombre lo indica, este patrón se estructura en 3 capas logicas que interactuan separando la presentacion e iteración con los datos. La capa del *modelo* gestiona los datos, conexiones a BD y los metodos que interactuen sobre ellos, la *vista* es la engarcada de la presentación de la información al usuario, es decir "es la capa con la que el usuario interactua con el sistema" y la capa del *controlador* es la orquestadora de las interacciones del usuario con las funcion del sistema, es el engargado de gestionar el acceso al modelo y la presentación de los datos en la vista.
@@ -112,9 +173,11 @@ __Herramientas__
 
 ### Definición de Tecnología v2
 
-
-definir tecnologia a utilizar!!!!!!!
-
+* Lenguaje de programación: JavaScript
+*Entorno y Framework backend: NodeJS - Express
+* Framework frontend: Boostrap
+* Base de datos: MonngoDB
+* Web server: Nginx
 
 ### Marco-referencia-v2
 
@@ -124,6 +187,7 @@ definir tecnologia a utilizar!!!!!!!
     .
     .
     .
+
 
 #### Rendimiento ¿Qué son las pruebas de rendimiento?
 
@@ -149,6 +213,7 @@ Objetivos:
 
 Prueba de rendimiento que se realiza para observar el comportamiento de una aplicación bajo una cantidad de peticiones extrema.
 
+
 Objetivos:
 
     ‘Romper’ la aplicación.
@@ -163,6 +228,7 @@ A la hora de efectuar pruebas de rendimiento empleando herramientas de software,
     * __Pensar en Caché:__ Tener almacenamiento en cache, es decir, tener la mayor cantidad
     posible de componentes y paginas importantes bajo una estrategia de almacenamiento en caché.
 
+
     * __Diseño para el fracaso:__ Evaluar todas las posibilidades de fracaso y su probabilidad probable.
     Algunos eventos comunes de falla pueden ser fallos de hardware, fallos de seguridad,
     desastres naturales, repunte repentino del tráfico de usuarios, fallos de red, fallos de operaciones, etc.
@@ -172,6 +238,7 @@ A la hora de efectuar pruebas de rendimiento empleando herramientas de software,
 
     * __Mantenerse liviano:__ los componentes páginas clave deben mantenerse ligeros reduciendo
     su tamaño general y minimizando el número de viajes de ida y vuelta del servidor.
+
 
     * __Cargas no bloqueadas usando la solicitud de datos asincrónicos:__ Sean componentes del
     lado del cliente o para comunicarse con el servidor o para la agregación de datos, intente
